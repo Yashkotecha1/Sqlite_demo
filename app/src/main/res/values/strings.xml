@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sqlite_demo</string>
+    <string name="number_of_pages">Number Of Pages</string>
+    <string name="author_name">Author Name</string>
+    <string name="book_title">Book Title</string>
+    <string name="submit">Submit</string>
+</resources>
