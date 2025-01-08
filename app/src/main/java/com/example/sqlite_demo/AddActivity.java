@@ -1,12 +1,11 @@
 package com.example.sqlite_demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 public class AddActivity extends AppCompatActivity {
 
@@ -30,6 +29,8 @@ Body();
             try {
                 DatabaseHelper dbh = new DatabaseHelper(AddActivity.this);
                 dbh.addBook(edt_booktitle.getText().toString().trim(), edt_Author.getText().toString().trim(), Integer.parseInt(edt_bookpages.getText().toString().trim()));
+                Intent intent = new Intent(AddActivity.this,MainActivity.class);
+                startActivity(intent);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

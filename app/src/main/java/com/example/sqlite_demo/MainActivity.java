@@ -50,11 +50,9 @@ ArrayList<String> book_id,book_title,book_author,book_pages;
                 startActivity(i);
             }
         });
-        storeDataArray();
+//        storeDataArray();
 
-        CustomAdapter adapter = new CustomAdapter(MainActivity.this,book_id,book_title,book_author,book_pages);
-        recy_id.setAdapter(adapter);
-        recy_id.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
         }
     void storeDataArray()
     {
@@ -75,5 +73,15 @@ ArrayList<String> book_id,book_title,book_author,book_pages;
     {
         recy_id = findViewById(R.id.recy_id);
         btn_id = findViewById(R.id.btn_id);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+            storeDataArray();
+        CustomAdapter adapter = new CustomAdapter(MainActivity.this,book_id,book_title,book_author,book_pages);
+        recy_id.setAdapter(adapter);
+        recy_id.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        //      Body();
     }
 }

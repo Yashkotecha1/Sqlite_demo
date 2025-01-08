@@ -45,6 +45,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
+//        System.out.println("size is "+book_id.size());
         return book_id.size();
     }
 
