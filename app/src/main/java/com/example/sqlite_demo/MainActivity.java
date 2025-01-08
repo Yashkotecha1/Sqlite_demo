@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -50,7 +51,11 @@ ArrayList<String> book_id,book_title,book_author,book_pages;
             }
         });
         storeDataArray();
-    }
+
+        CustomAdapter adapter = new CustomAdapter(MainActivity.this,book_id,book_title,book_author,book_pages);
+        recy_id.setAdapter(adapter);
+        recy_id.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        }
     void storeDataArray()
     {
         Cursor cursor = mydb.getBook();
